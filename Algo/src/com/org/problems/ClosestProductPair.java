@@ -16,6 +16,7 @@ public class ClosestProductPair {
 //		Scanner scanner=new Scanner(System.in);
 		int array[]= {2, 3, 5, 9,1,4};
 		closestPair(array,18);
+		
 	}
 	private static void closestPair(int arr[],int x) {
 		Arrays.sort(arr);
