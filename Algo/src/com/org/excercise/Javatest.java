@@ -4,6 +4,7 @@ import java.util.concurrent.ConcurrentHashMap;
 
 public class Javatest {
 	public static void main(String []args) {
+		System.out.println("Hello");
 		ConcurrentHashMap<String, Stock> dataMap=new ConcurrentHashMap<String, Stock>();
 		String key="1";
 		double val=10;
