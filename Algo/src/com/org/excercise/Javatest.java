@@ -1,32 +1,60 @@
 package com.org.excercise;
 
-import java.util.concurrent.ConcurrentHashMap;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+import java.util.stream.Collectors;
+
 
 public class Javatest {
 	public static void main(String []args) {
-		System.out.println("Hello");
-		ConcurrentHashMap<String, Stock> dataMap=new ConcurrentHashMap<String, Stock>();
-		String key="1";
-		double val=10;
-		Stock stock=null;
-		if(dataMap.containsKey(key)==true) {
-			stock=dataMap.get(key);
-			double total=stock.avg*stock.count;
-			stock.count++;
-			stock.avg=(total+val)/stock.count;
-		}
-		else {
-			stock=new Stock(1, val);
-		}
-		dataMap.put(key, stock);
+//		int a[]= {140638725, 436257910, 953274816, 734065819, 362748590};
+//		System.out.println(solve("12:00:00AM"));
+//		System.out.println(solve("12:01:00AM"));
+//		System.out.println(solve("12:01:00PM"));
+//		System.out.println(solve("12:01:00AM"));
+//		System.out.println(solve("01:01:00PM"));
+//		System.out.println(solve("01:01:00AM"));
+//		System.out.println(solve("06:01:00AM"));
+//		System.out.println(solve("06:01:00PM"));
+//		System.out.println(solve("02:00:00AM"));
+//		System.out.println(solve("02:01:00PM"));
+		System.out.println(solve("03:00:00AM"));
+		System.out.println(solve("03:01:00PM"));
+		System.out.println(solve("04:00:00AM"));
+		System.out.println(solve("04:01:00PM"));
+		System.out.println(solve("12:45:54PM"));
+		List<String> lis=Arrays.asList("1","2","3","4");
+		List<String> lis1=Arrays.asList("12","22","32","42");
+		System.out.println(lis);
+		change(lis,lis1);
+		System.out.println(lis);
 	}
-	
-}
-class Stock{
-	int count;
-	double avg;
-	public Stock(int count,double avg) {
-		this.count=count;
-		this.avg=avg;
+	static void change(List<String> lis,List<String> lis1) {
+		lis=lis1;
 	}
+	 static int solve(int[] ar) {
+		return 0;
+		 
+	 }
+	 static String solve(String str) {
+		 int a=Integer.parseInt(str.substring(0, 2));
+		 String s=str.substring(str.length()-2);
+		 if("PM".equalsIgnoreCase(s)) {
+			 if(a<12) {
+				 a=a+12;
+			 }
+//			 if(a==12) {
+//				 a=a+1;
+//			 }
+			 return a+(str.substring(2, str.length()-2));
+		 }else {
+			 if(a==12) {
+				 return"00"+str.substring(2, str.length()-2);
+			 }
+			 return str.substring(0, str.length()-2);
+		 }
+	 }
+		
 }
